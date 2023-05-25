@@ -3,10 +3,7 @@
 This is my personal website, includes my information, my projects, and my resume.
 ## Partnership
 <h4 style='margin: 0px; font-weight: 700;'>THE PENGUIN STUDIO</h4>
-<div style='display:flex;align-items: center;'>
-  <h3 style='margin: 0 22px 0 0; font-weight: 900; font-size: 30px;'>Zequlard</h5>
-  <p style='margin: 0px;'>IT</p>
-</div>
+<h3 style='margin: 0 22px 0 0; font-weight: 900; font-size: 30px;'>Zequlard IT</h5>
 <h4 style='margin: 0px; font-weight: 700;'>TPS. CHIEF ENGINEER</h4>
 
 #### crew: `Zequlard & Penguin & Athor`
@@ -28,7 +25,6 @@ line
   <path fill="#a5d6a7" d="M34.975,20.983c0.565,0,1.025,0.455,1.025,1.016c0,0.56-0.459,1.015-1.025,1.015h-2.856v1.817h2.856	c0.565,0,1.025,0.455,1.025,1.015s-0.46,1.016-1.025,1.016h-3.879c-0.563,0-1.023-0.455-1.023-1.016v-3.845c0-0.001,0-0.001,0-0.001	v-0.001v-0.001v-3.842c0-0.001,0-0.001,0-0.003c0-0.56,0.459-1.015,1.023-1.015h3.879c0.565,0,1.025,0.455,1.025,1.015	s-0.459,1.015-1.025,1.015h-2.856v1.817h2.856V20.983z"></path>
 </svg>
 ```
-
 
 ## CopyRight
 © 2021 THE PENGUIN STUDIO All Rights Reserved.
