@@ -8,6 +8,17 @@
   <meta name="twitter:description" content="家教詳細資訊">
   <link rel="icon" href="img/icon.png">
   <title>MARKUSION | HOME</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var loadingOverlay = document.getElementById("loadingOverlay");
+      loadingOverlay.style.opacity = "1";
+    });
+    window.addEventListener("load", function() {
+      var loadingOverlay = document.getElementById("loadingOverlay");
+      loadingOverlay.style.display = "none";
+      loadingOverlay.parentNode.removeChild(loadingOverlay);
+    });
+  </script>
 </head>
 <body>
   <style> /* globle */
@@ -30,6 +41,94 @@
       overflow-x: hidden;
     }
   </style>
+  <div id="loadingOverlay" style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  display: flex;align-items: center;
+  justify-content: center;z-index: 100;
+  transition: all .7s ease-in-out;">
+    <style>
+      .loader {
+        position: fixed;
+        top: center;
+        left: center;
+        width: 60vw;
+        height: 60vw;
+        border-radius: 50%;
+        background: linear-gradient(#f07e6e, #84cdfa, #5ad1cd);
+        animation: animate 2.5s linear infinite;
+      }
+      @keyframes animate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .loader span {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: linear-gradient(#68f6af, #84cdfa, #d5a0fa);
+      }
+      .loader span:nth-child(1) {
+        filter: blur(5px);
+      }
+      .loader span:nth-child(2) {
+        filter: blur(10px);
+      }
+      .loader span:nth-child(3) {
+        filter: blur(25px);
+      }
+      .loader span:nth-child(4) {
+        filter: blur(50px);
+      }
+      .loader:after {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        background: #ffffff;
+        /* border: solid white 10px; */
+        border-radius: 50%;
+      }
+      .loadtxt {
+        display: flex;
+        position: fixed;
+        width: 60vw;
+        height: 60vw;
+        font-size: 30vw;
+        z-index: 10;
+        align-items: center;
+        justify-content: center
+      }
+      .loadtxt p {
+        position: relative;
+        color: #000000;
+        font-size: 70%;
+        font-weight: 350;
+        font-family: sans-serif;
+      }
+    </style>
+    <div class="loadtxt">
+      <p>LOADING</p>
+    </div>
+    <div class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <!-- <span style="font-size: 10vw;">Web is Loading...</span> -->
+  </div>
   <dvi id="main" style=" /* img name media_line_btn */
   display: flex;
   flex-direction: column;
@@ -216,9 +315,12 @@
      
     </div>
   </dvi>
-  <dvi id="information" style=" /* bio */
+  <dvi id="bio" style=" /* biography */
   display: flex;
-  "></dvi>
+  ">
+    <div></div>
+    <div></div>
+  </dvi>
   <dvi style=" /* footer */
   display: flex;
   flex-direction: column;
