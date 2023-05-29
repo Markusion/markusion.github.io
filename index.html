@@ -21,7 +21,7 @@
   </script>
 </head>
 <body>
-  <style> /* globle */
+  <style> /* globle style */
     * {
       margin: 0;
       padding: 0;
@@ -33,7 +33,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
       background: linear-gradient(to bottom, rgb(255, 50, 22), rgb(116, 23, 255), rgb(143, 69, 255), rgb(191, 89, 255));
       display: flex;
       margin: 0;
@@ -41,6 +40,7 @@
       overflow-x: hidden;
     }
   </style>
+  <!-- loading screen -->
   <div id="loadingOverlay" style="
   position: fixed;
   top: 0;
@@ -129,12 +129,14 @@
     </div>
     <!-- <span style="font-size: 10vw;">Web is Loading...</span> -->
   </div>
-  <dvi id="main" style=" /* img name media_line_btn */
+  <!-- img name media_list -->
+  <dvi id="main" style=" 
   display: flex;
   flex-direction: column;
   align-items: center;
   ;">
-    <!-- img  --> <div style="
+    <!-- img  --> 
+    <div style="
     background-image: url(img/profile_pic.png);
     background-color: rgba(255, 255, 255, 0.902);
     background-position: center;
@@ -146,7 +148,8 @@
     border-radius: 50px;
     margin: 20vw 0 5vw 0;
     "></div>
-    <!-- name --> <div style="
+    <!-- name --> 
+    <div style="
     display: flex;
     align-items: center;
     ">
@@ -158,7 +161,10 @@
       margin: 15px 0 25px 0;
       ">MARKUSION</h1>
     </div>
-    <div> <!-- media list --> 
+    <!-- media list --> 
+    <div style="
+    margin: 0 0 15vw 0;
+    "> 
       <style>
         .media_box {
           display: flex;
@@ -178,23 +184,23 @@
           margin: 0 20px 0 0;
         }
         #line_txt {
-          text-shadow: 0px 0px 5px rgb(175, 255, 175), 0px 0px 5px rgb(175, 255, 175), 0px 0px 40px rgb(255, 255, 255);
+          text-shadow: 0px 0px 5px rgb(175, 255, 175), 0px 0px 9px rgb(175, 255, 175), 0px 0px 5px rgb(175, 255, 175), 0px 0px 40px rgb(255, 255, 255);
         }
         #facebook_txt {
-          text-shadow: 0px 0px 5px rgb(175, 220, 255), 0px 0px 5px rgb(175, 220, 255), 0px 0px 40px rgb(255, 255, 255);
+          text-shadow: 0px 0px 5px rgb(175, 220, 255), 0px 0px 9px rgb(175, 220, 255), 0px 0px 5px rgb(175, 220, 255), 0px 0px 40px rgb(255, 255, 255);
         }
         #github_txt {
-          text-shadow: 0px 0px 5px rgb(255, 245, 175), 0px 0px 5px rgb(255, 245, 175), 0px 0px 40px rgb(255, 255, 255);
+          text-shadow: 0px 0px 5px rgb(255, 245, 175), 0px 0px 9px rgb(255, 245, 175), 0px 0px 5px rgb(255, 245, 175), 0px 0px 40px rgb(255, 255, 255);
         }
         #youtube_txt {
-          text-shadow: 0px 0px 5px rgb(255, 175, 175), 0px 0px 5px rgb(255, 175, 175), 0px 0px 40px rgb(255, 255, 255);
+          text-shadow: 0px 0px 5px rgb(255, 175, 175), 0px 0px 9px rgb(255, 175, 175), 0px 0px 5px rgb(255, 175, 175), 0px 0px 40px rgb(255, 255, 255);
         }
         a {
           text-decoration: none;
           color: black;
         }
       </style>
-      <!--line--> 
+      <!--▼line--> 
       <a href="">
       <div class="media_box">
         <div class="icon_box">
@@ -223,7 +229,7 @@
           <h2 id="line_txt">LINE</h2>
         </div>
       </div></a>
-      <!--fb--> 
+      <!--▼facebook--> 
       <a href="">
       <div class="media_box">
         <div class="icon_box">
@@ -249,7 +255,7 @@
           <h2 id="facebook_txt">FACEBOOK</h2>
         </div>
       </div></a>
-      <!--git-->
+      <!--▼github-->
       <a href="">
       <div class="media_box">
         <div class="icon_box">
@@ -279,7 +285,7 @@
           <h2 id="github_txt">GITHUB</h2>
         </div>
       </div></a>
-      <!--youtube--> 
+      <!--▼youtube--> 
       <a href="">
       <div class="media_box">
         <div class="icon_box">
@@ -312,20 +318,24 @@
           <h2 id="youtube_txt">YOUTUBE</h2>
         </div>
       </div></a>
-     
     </div>
   </dvi>
-  <dvi id="bio" style=" /* biography */
-  display: flex;
-  ">
-    <div></div>
-    <div></div>
-  </dvi>
-  <dvi style=" /* footer */
+  <!-- biography -->
+  <dvi id="bio" style=" 
   display: flex;
   flex-direction: column;
   ">
-    <!-- <div style="display: flex;flex-direction: column;align-self: start;margin: 10px; width: 92vw;"><h4 style='margin: 0px; font-weight: 700;'>THE PENGUIN STUDIO</h4><div style='display:flex;align-items: center;'><h3 style='margin: 0 35px 0 0; font-weight: 900; font-size: 30px;'>Zequlard</h5><p style='margin: 0px;'>IT</p></div><h4 style='margin: 0px; font-weight: 700;'>TPS. CHIEF ENGINEER</h4></div> -->
+    <div>line__1</div>
+    <div>line__2</div>
+    <div>line__3</div>
+    <div>line__4</div>
+  </dvi>
+  <!-- footer -->
+  <dvi style=" 
+  display: flex;
+  flex-direction: column;
+  ">
+    <div style="display: flex;flex-direction: column;align-self: start;margin: 10px; width: 92vw;"><h4 style='margin: 0px; font-weight: 700;'>THE PENGUIN STUDIO</h4><div style='display:flex;align-items: center;'><h3 style='margin: 0 35px 0 0; font-weight: 900; font-size: 30px;'>Zequlard</h5><p style='margin: 0px;'>IT</p></div><h4 style='margin: 0px; font-weight: 700;'>TPS. CHIEF ENGINEER</h4></div>
   </dvi>
 </body>
 </html>
