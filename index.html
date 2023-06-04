@@ -31,7 +31,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      background: linear-gradient(to bottom, rgb(255, 50, 22), rgb(116, 23, 255), rgb(143, 69, 255), rgb(191, 89, 255));
+      /* background: linear-gradient(to bottom, rgb(255, 50, 22), rgb(116, 23, 255), rgb(143, 69, 255), rgb(191, 89, 255)); */
+      background: #333333;
       display: flex;
       margin: 0;
       height: 250vh;
@@ -137,6 +138,7 @@
   flex-direction: column;
   align-items: center;
   ;">
+
     <!-- img  --> 
     <div style="
     background-image: url(img/profile_pic.png);
@@ -145,11 +147,12 @@
     background-size: cover;
     height: 45vw;
     width: 45vw;
-    box-shadow: 0px 0px 7px 1px rgb(255, 255, 255), 0px 0px 60px 1px rgb(255, 255, 255);
-    border: 4px solid rgb(187, 186, 186);
+    box-shadow: 0px 0px 7px 1px rgb(255, 255, 255), 0px 0px 20px 3px rgb(255, 255, 255);
+    border: 4.5px solid rgb(171, 170, 170);
     border-radius: 50px;
     margin: 20vw 0 5vw 0;
     "></div>
+
     <!-- name --> 
     <div style="
     display: flex;
@@ -159,15 +162,20 @@
       font-size: 9vw;
       font-weight: 900;
       font-family:  sans-serif, Arial, Helvetica;
-      text-shadow: 0px 0px 4px rgb(255, 255, 255), 0px 0px 4px rgb(255, 255, 255), 0px 0px 40px rgb(255, 255, 255);
+      /* text-shadow: 0px 0px 4px rgb(255, 255, 255), 0px 0px 4px rgb(255, 255, 255), 0px 0px 10px rgb(255, 255, 255); */
       margin: 15px 0 25px 0;
+      color: #ffffff;
       ">MARKUSION</h1>
     </div>
+
     <!-- media list --> 
     <div style="
     margin: 0 0 15vw 0;
     "> 
       <style>
+        /* svg {
+          display: none;
+        } */
         .media_box {
           display: flex;
           flex-direction: column;
@@ -178,8 +186,8 @@
         .media_box h2 {
           font-family: sans-serif, Arial, Helvetica;
           width: fit-content;
-          font-weight: 450;
-          font-size: 30px;
+          font-weight: 900;
+          font-size: 8vw;
           margin: 8px 0;
         }
         .icon_box {
@@ -321,7 +329,42 @@
         </div>
       </div></a>
     </div>
+
   </dvi>
+
+  <style>
+    #spacer {
+      height: 8px;
+      width: 80vw;
+
+      margin: 0;
+      padding: 0;
+
+      border-radius: 50px;
+      background-color: #ffffff;
+
+      transition: all 0.5s ease-in-out;
+    }
+    #spacer.fixed {
+      width: 20vw;
+    }
+  </style>
+  <div id="spacer">
+    <script>
+      window.addEventListener('scroll', function() {
+        var spacer = document.getElementById("spacer");
+        var scrollY = window.scrollY;
+
+        if (scrollY > 10) {
+          spacer.classList.add('fixed');
+          body.classList.add('fixed');
+        } else {
+          spacer.classList.remove('fixed');
+          body.classList.remove('fixed');
+        }
+      });
+    </script>
+  </div>
 
   <!-- biography -->
   <dvi id="bio" style=" 
