@@ -40,7 +40,7 @@
 - #### 學校代表 奧林比克數學競賽選手
 - #### 台北市聯合第二外語演講比賽獲得優異
 ## 網站編程及設計 合作關係
-Partnership | website <br>
+__Partnership | website__<br><br>
 <img src="img/tps.png" width="auto" height="200">
 <!-- <h4 style='margin: 0px; font-weight: 700;'>THE PENGUIN STUDIO</h4>
 <h3 style='margin: 0 22px 0 0; font-weight: 900; font-size: 30px;'>Zequlard IT</h5>
