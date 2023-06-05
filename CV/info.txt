@@ -21,4 +21,7 @@ phone   (09)27-101-378
   2016 Chun-Liang Lo, Meng-Han Chou, Pei-Lin Lu, I-Wen Lo, Yi-Ting Chiang, Shang-Yu Hung, Chieh- Yu Yang, Shuian-Yin Lin, Shiaw-Pyng Wey, Jem-Mau Lo, Ging-Ho Hsiue, 
   The effect of PEG-5K grafting level and particle size on tumor accumulation and cellular uptake, 
   International journal of pharmaceutics, 2013 Nov 18;456 (2), 424-431
-2. 洪上淯、羅尹彣、駱俊良, “製備榖胱甘肽應答之奈米金粒子藥物載體”,第五屆世界華人 生物醫學工程會議(WACBE 2011) & 2011 生物醫學工程科技研討會, 2011.08.19 ~ 2011.08.20
+2. 洪上淯、羅尹彣、駱俊良, 
+  “製備榖胱甘肽應答之奈米金粒子藥物載體”,
+  第五屆世界華人 生物醫學工程會議(WACBE 2011) & 2011 生物醫學工程科技研討會, 
+  2011.08.19 ~ 2011.08.20
