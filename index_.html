@@ -112,22 +112,60 @@
     }
   </style>
   <!-- basic info -->
-  <div>
+  <div class="BASICINFO">
     <style>
+      .BASICINFO {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
       .profile_img {
         height: 500px;
         width: 500px;
-        border: 1px solid black;
+        margin: 100px 0 0 0;
+        border: 4px solid rgb(94, 94, 94);
         border-radius: 20%;
-        background-image: url(img/);
+        background: url(img/profile_pic.png) center / cover;
+      }
+      .profile_txt {
+        margin: 30px 0 0 0;
+        font-size: 85px;
+      }
+      @media screen and (max-width: 1000px) { /*1500*/
+        .profile_img {
+          height: 400px;
+          width: 400px;
+          border: 3px solid rgb(94, 94, 94);
+          margin: 90px 0 0 0;
+        }
+        .profile_txt {
+          margin: 20px 0 0 0;
+          font-size: 68px;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        .profile_img {
+          height: 52vw;
+          width: 52vw;
+          border: 2.5px solid rgb(94, 94, 94);
+          margin: 60px 0 0 0;
+        }
+        .profile_txt {
+          margin: 10px 0 0 0;
+          font-size: 9vw;
+        }
       }
     </style>
     <!-- IMG + NAME -->
-    <div>
+    <div style="
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;">
       <!-- IMG -->
       <div class="profile_img"></div>
       <!-- NAME -->
-      <div></div>
+      <div class="profile_txt">MARKUSION</div>
     </div>
 
     <!-- txt spacerBox -->
