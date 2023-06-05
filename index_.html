@@ -11,6 +11,7 @@
       display: none;
     }
     * {
+      font-family: sans-serif, Arial, Helvetica;
       margin: 0;
       padding: 0;
     }
@@ -27,9 +28,30 @@
       height: 52px;
       background-color: rgba(0, 0, 0, 0.2);
     }
-    header h1 {
+    header h1.name {
       font-size: 32px;
       margin: 0 0 0 18px;
+    }
+    .iconBox {
+      display: flex;
+      flex-direction: row;
+      margin: 0 18px 0 0;
+    }
+    .icon {
+      width: 40px;
+      height: 40px;
+      margin: 0 0 0 10px;
+      background-size: cover;
+      background-position: center;
+    }
+    .icon:hover {
+      cursor: pointer;
+    }
+    .icon.home {
+      background-image: url(img/icon/home.png);
+    }
+    .icon.search {
+      background-image: url(img/icon/list.png);
     }
     @media screen and (max-width: 1000px) { /*1500*/
       header {
@@ -38,6 +60,14 @@
       header h1 {
         font-size: 27px;
         margin: 0 0 0 15px;
+      }
+      .iconBox {
+        margin: 0 15px 0 0;
+      }
+      .icon {
+        width: 36px;
+        height: 36px;
+        margin: 0 0 0 7px;
       }
     }
     @media screen and (max-width: 600px) {
@@ -48,14 +78,25 @@
         font-size: 24px;
         margin: 0 0 0 12px;
       }
+      .iconBox {
+        margin: 0 12px 0 0;
+      }
+      .icon {
+        width: 30px;
+        height: 30px;
+        margin: 0 0 0 5px;
+      }
     }
   </style>
 
   <!-- name -->
-  <div><h1>Markusion</h1></div>
+  <div><h1 class="name">Markusion</h1></div>
 
   <!-- 2icon -->
-  <div>s</div>
+  <div class="iconBox">
+    <div class="icon home"></div>
+    <div class="icon search"></div>
+  </div>
 </header>
 <body>
   <!-- basic info -->
