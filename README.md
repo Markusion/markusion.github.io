@@ -40,11 +40,12 @@
 - #### 學校代表 奧林比克數學競賽選手
 - #### 台北市聯合第二外語演講比賽獲得優異
 ## 網站編程及設計 合作關係
-Partnership | website
-<h4 style='margin: 0px; font-weight: 700;'>THE PENGUIN STUDIO</h4>
+Partnership | website <br>
+<img src="img/tps.png" width="auto" height="200">
+<!-- <h4 style='margin: 0px; font-weight: 700;'>THE PENGUIN STUDIO</h4>
 <h3 style='margin: 0 22px 0 0; font-weight: 900; font-size: 30px;'>Zequlard IT</h5>
 <h4 style='margin: 0px; font-weight: 700;'>TPS. CHIEF ENGINEER</h4><br>
-<img src="img/icon_white_shadow.png" width="48" height="48">™
+<img src="img/icon_white_shadow.png" width="48" height="48">™ -->
 
 #### crew: Zequlard & Penguin & Athor
 `© 2021 THE PENGUIN STUDIO All Rights Reserved.`
