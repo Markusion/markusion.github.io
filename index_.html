@@ -21,11 +21,14 @@
   <!-- header style -->
   <style>
     header {
+      position: sticky;
+      top: 0;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
       height: 52px;
+      width: 100vw;
       background-color: rgba(0, 0, 0, 0.2);
     }
     header h1.name {
@@ -99,8 +102,41 @@
   </div>
 </header>
 <body>
+  <!-- body style -->
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 200vh;
+    }
+  </style>
   <!-- basic info -->
-  <div></div>
+  <div>
+    <style>
+      .profile_img {
+        height: 500px;
+        width: 500px;
+        border: 1px solid black;
+        border-radius: 20%;
+        background-image: url(img/);
+      }
+    </style>
+    <!-- IMG + NAME -->
+    <div>
+      <!-- IMG -->
+      <div class="profile_img"></div>
+      <!-- NAME -->
+      <div></div>
+    </div>
+
+    <!-- txt spacerBox -->
+    <div></div>
+
+    <!-- basicINFO txt -->
+    <div></div>
+
+  </div>
   <!-- more info boxes -->
   <div></div>
 </body>
