@@ -20,26 +20,42 @@
   <!-- header style -->
   <style>
     header {
-      height: 80px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      height: 52px;
       background-color: rgba(0, 0, 0, 0.2);
     }
-    @media screen and (max-width: 1500px) {
+    header h1 {
+      font-size: 32px;
+      margin: 0 0 0 18px;
+    }
+    @media screen and (max-width: 1000px) { /*1500*/
       header {
-        height: 70px;
+        height: 48px;
+      }
+      header h1 {
+        font-size: 27px;
+        margin: 0 0 0 15px;
       }
     }
     @media screen and (max-width: 600px) {
       header {
-        height: 60px;
+        height: 40px;
+      }
+      header h1 {
+        font-size: 24px;
+        margin: 0 0 0 12px;
       }
     }
   </style>
 
   <!-- name -->
-  <div></div>
-  
+  <div><h1>Markusion</h1></div>
+
   <!-- 2icon -->
-  <div></div>
+  <div>s</div>
 </header>
 <body>
   <!-- basic info -->
