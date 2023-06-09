@@ -122,6 +122,10 @@
         align-items: center;
         justify-content: center;
       }
+      .txtBox ul {
+        display: flex;
+        flex-direction: column;
+      }
       .txtBox li {
         list-style-type: none;
       }
@@ -191,13 +195,13 @@
       </div>
       <!-- txt -->
       <div class="txtBox" style="display: flex; flex-direction: row;">
-        <ul>
+        <ul style="align-items: flex-end;">
           <li>Name</li>
           <li>E-mail</li>
           <li>Phone</li>
           <li>Current</li>
         </ul>
-        <ul>
+        <ul style="align-items: flex-start;">
           <li>洪上淯</li>
           <li>Vinlex1939@gmail.com</li>
           <li>(09)27-101-378</li>
