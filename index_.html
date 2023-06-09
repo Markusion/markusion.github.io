@@ -15,6 +15,10 @@
       margin: 0;
       padding: 0;
     }
+    :root {
+      --globe-usingcolor-lightgrey: rgb(236, 235, 235);
+      --header-usingcolor-lightgrey: rgba(222, 222, 222, 0.95);
+    }
   </style>
 </head>
 
@@ -30,7 +34,7 @@
       align-items: center;
       height: 52px;
       width: 100vw;
-      background-color: rgba(222, 222, 222, 0.95);
+      background-color: var(--header-usingcolor-lightgrey);
     }
     header h1.name {
       font-size: 32px;
@@ -122,12 +126,10 @@
         align-items: center;
         justify-content: center;
       }
-      .txtBox ul {
+      .BASICINFO_txt {
         display: flex;
         flex-direction: column;
-      }
-      .txtBox li {
-        list-style-type: none;
+        align-items: center;
       }
       .profile_img {
         height: 500px;
@@ -141,9 +143,21 @@
         margin: 30px 0 0 0;
         font-size: 85px;
       }
-      .txt_spacerBox {
-        margin: 48px 0 0 0;
-        font-size: 18px;
+      .info_title {
+        margin: 148px 0 120px 0;
+        background-color: var(--globe-usingcolor-lightgrey);
+        padding: 10px 20vw;
+        font-size: 119px;
+      }
+      .txtBox ul {
+        display: flex;
+        flex-direction: column;
+      }
+      .txtBox li {
+        list-style-type: none;
+        font-size: 4.5vw;
+        font-weight: 500;
+        margin: 0 0 15px 0;
       }
       @media screen and (max-width: 1000px) { /*1500*/
         .profile_img {
@@ -168,8 +182,8 @@
           margin: 10px 0 0 0;
           font-size: 9vw;
         }
-        .txt_spacerBox {
-          margin: 48px 0 0 0;
+        .info_title {
+          margin: 48px 0 20px 0;
           font-size: 19px;
         }
       }
@@ -188,14 +202,15 @@
     
 
     <!-- basicINFO txt -->
-    <div>
+    <div class="BASICINFO_txt">
       <!-- txt spacerBox -->
-      <div class="txt_spacerBox">
+      <div class="info_title">
         <p>基本資訊｜Basic info</p>
       </div>
+
       <!-- txt -->
       <div class="txtBox" style="display: flex; flex-direction: row;">
-        <ul style="align-items: flex-end;">
+        <ul style="align-items: flex-end; margin: 0 24px 0 0;">
           <li>Name</li>
           <li>E-mail</li>
           <li>Phone</li>
