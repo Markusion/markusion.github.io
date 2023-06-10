@@ -299,7 +299,23 @@
     }
 
     /* child _2 */
+    .moreINFObox:nth-child(2) button {
+      font-size: 4vw;
+      font-weight: 400;
+      letter-spacing: 3px;
+      color: var(--globe-usingcolor-white);
+      height: fit-content;
+      width: fit-content;
+      border: solid 1.5px rgb(255, 255, 255);
+      padding: 1.5px 8px;
+      border-radius: 8px;
+      background-color: var(--globe-usingcolor-greypink);
+      cursor: pointer;
+    }
     .moreINFObox:nth-child(2) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       background-color: var(--globe-usingcolor-greypink);
     }
     
@@ -334,7 +350,11 @@
     </div>
 
     <!-- edu contact box -->
-    <div class="moreINFObox"></div>
+    <div class="moreINFObox">
+      <p>讓我們協助您學習</p>
+      <p>點擊按鈕諮詢內容</p>
+      <button>Click me</button>
+    </div>
 
     <!-- project pic box -->
     <div class="moreINFObox"></div>
