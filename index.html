@@ -2,386 +2,411 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="google" content="notranslate">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="twitter:description" content="家教詳細資訊">
-  <link rel="icon" href="img/icon.png">
   <title>MARKUSION | HOME</title>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var loadingOverlay = document.getElementById("loadingOverlay");
-      loadingOverlay.style.opacity = "1";
-    });
-    window.addEventListener("load", function() {
-      var loadingOverlay = document.getElementById("loadingOverlay");
-      loadingOverlay.style.display = "none";
-      loadingOverlay.parentNode.removeChild(loadingOverlay);
-    });
-  </script>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
     ::-webkit-scrollbar {
       display: none;
     }
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      /* background: linear-gradient(to bottom, rgb(255, 50, 22), rgb(116, 23, 255), rgb(143, 69, 255), rgb(191, 89, 255)); */
-      background: #333333;
-      display: flex;
+    * {
+      font-family: sans-serif, Arial, Helvetica;
       margin: 0;
-      height: 250vh;
+      padding: 0;
+    }
+    :root {
+      --globe-usingcolor-white: rgb(255, 255, 255);
+      --globe-usingcolor-lightgrey: rgb(236, 235, 235);
+      --globe-usingcolor-greypink: #C9ACBC;
+      --header-usingcolor-lightgrey: rgba(222, 222, 222, 0.98);
+      --body-usingstyle-blur-white: rgba(255, 255, 255, 0.3);
+      --body-usingstyle-textshadow: rgba(51, 51, 51, 0.252);
+    }
+    html {
+      /* scroll-behavior: smooth; */
       overflow-x: hidden;
     }
   </style>
 </head>
-<body>
 
-  <!-- loading screen -->
-  <div id="loadingOverlay" style="
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgb(255, 255, 255);
-  display: flex;align-items: center;
-  justify-content: center;z-index: 100;
-  transition: all .7s ease-in-out;">
-    <style>
-      .loader {
-        position: fixed;
-        top: center;
-        left: center;
-        width: 60vw;
-        height: 60vw;
-        border-radius: 50%;
-        background: linear-gradient(#f07e6e, #84cdfa, #5ad1cd);
-        animation: animate 2.5s linear infinite;
-      }
-      @keyframes animate {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-      .loader span {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background: linear-gradient(#68f6af, #84cdfa, #d5a0fa);
-      }
-      .loader span:nth-child(1) {
-        filter: blur(5px);
-      }
-      .loader span:nth-child(2) {
-        filter: blur(10px);
-      }
-      .loader span:nth-child(3) {
-        filter: blur(25px);
-      }
-      .loader span:nth-child(4) {
-        filter: blur(50px);
-      }
-      .loader:after {
-        content: '';
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        right: 10px;
-        bottom: 10px;
-        background: #ffffff;
-        /* border: solid white 10px; */
-        border-radius: 50%;
-      }
-      .loadtxt {
-        display: flex;
-        position: fixed;
-        width: 60vw;
-        height: 60vw;
-        font-size: 30vw;
-        z-index: 10;
-        align-items: center;
-        justify-content: center
-      }
-      .loadtxt p {
-        position: relative;
-        color: #000000;
-        font-size: 70%;
-        font-weight: 350;
-        font-family: sans-serif;
-      }
-    </style>
-    <div class="loadtxt">
-      <p>LOADING</p>
-    </div>
-    <div class="loader">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <!-- <span style="font-size: 10vw;">Web is Loading...</span> -->
-  </div>
-
-  <!-- img name media_list -->
-  <dvi id="main" style=" 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  ;">
-
-    <!-- img  --> 
-    <div style="
-    background-image: url(img/profile_pic.png);
-    background-color: rgba(255, 255, 255, 0.902);
-    background-position: center;
-    background-size: cover;
-    height: 45vw;
-    width: 45vw;
-    box-shadow: 0px 0px 7px 1px rgb(255, 255, 255), 0px 0px 20px 3px rgb(255, 255, 255);
-    border: 4.5px solid rgb(171, 170, 170);
-    border-radius: 50px;
-    margin: 20vw 0 5vw 0;
-    "></div>
-
-    <!-- name --> 
-    <div style="
-    display: flex;
-    align-items: center;
-    ">
-      <h1 style="
-      font-size: 9vw;
-      font-weight: 900;
-      font-family:  sans-serif, Arial, Helvetica;
-      /* text-shadow: 0px 0px 4px rgb(255, 255, 255), 0px 0px 4px rgb(255, 255, 255), 0px 0px 10px rgb(255, 255, 255); */
-      margin: 15px 0 25px 0;
-      color: #ffffff;
-      ">MARKUSION</h1>
-    </div>
-
-    <!-- media list --> 
-    <div style="
-    margin: 0 0 15vw 0;
-    "> 
-      <style>
-        /* svg {
-          display: none;
-        } */
-        .media_box {
-          display: flex;
-          flex-direction: column;
-          flex-direction: row;
-          align-items: center;
-          margin: 15px 0;
-        }
-        .media_box h2 {
-          font-family: sans-serif, Arial, Helvetica;
-          width: fit-content;
-          font-weight: 900;
-          font-size: 8vw;
-          margin: 8px 0;
-        }
-        .icon_box {
-          margin: 0 20px 0 0;
-        }
-        #line_txt {
-          text-shadow: 0px 0px 5px rgb(175, 255, 175), 0px 0px 9px rgb(175, 255, 175), 0px 0px 5px rgb(175, 255, 175), 0px 0px 40px rgb(255, 255, 255);
-        }
-        #facebook_txt {
-          text-shadow: 0px 0px 5px rgb(175, 220, 255), 0px 0px 9px rgb(175, 220, 255), 0px 0px 5px rgb(175, 220, 255), 0px 0px 40px rgb(255, 255, 255);
-        }
-        #github_txt {
-          text-shadow: 0px 0px 5px rgb(255, 245, 175), 0px 0px 9px rgb(255, 245, 175), 0px 0px 5px rgb(255, 245, 175), 0px 0px 40px rgb(255, 255, 255);
-        }
-        #youtube_txt {
-          text-shadow: 0px 0px 5px rgb(255, 175, 175), 0px 0px 9px rgb(255, 175, 175), 0px 0px 5px rgb(255, 175, 175), 0px 0px 40px rgb(255, 255, 255);
-        }
-        a {
-          text-decoration: none;
-          color: black;
-        }
-      </style>
-      <!--▼line--> 
-      <a href="">
-      <div class="media_box">
-        <div class="icon_box">
-          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="-1.1 0 48 48" >
-            <defs>
-              <filter id="line-neon-glow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
-                <feMerge>
-                  <feMergeNode in="blur" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-                <feColorMatrix type="matrix" values="0 0 0 0 0.3 0 0 0 0 0.50 0 0 0 0 0.3 0 0 0 2 0" result="glow" />
-                <feBlend in="SourceGraphic" in2="glow" mode="normal" />
-              </filter>
-            </defs>
-            <path fill="#a5d6a7" d="M45.979,26.312C45.979,17.869,37.467,11,27.007,11S8.032,17.869,8.032,26.312	c0,7.569,6.75,13.908,15.867,15.107c0.618,0.132,1.459,0.406,1.672,0.93c0.191,0.477,0.125,1.224,0.06,1.706	c0,0-0.222,1.331-0.27,1.615c-0.083,0.477-0.163,2.023,1.746,0.973C35.922,41.796,45.979,35.793,45.979,26.312z"></path>
-            <path fill="none" filter="url(#line-neon-glow)" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M7.199,13.032	c-2.323,2.59-3.694,5.771-3.694,9.205c0,7.779,6.937,14.294,16.308,15.527c0.635,0.136,1.5,0.417,1.718,0.956	c0.196,0.49,0.128,1.258,0.062,1.753c0,0-0.228,1.368-0.278,1.66c-0.085,0.49-0.168,2.079,1.795,1	c2.843-1.564,5.812-3.244,8.548-5.115"></path>
-            <path fill="none" filter="url(#line-neon-glow)" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M37.702,33.008	c2.896-3.057,4.804-6.584,4.804-10.771c0-8.677-8.748-15.737-19.499-15.737c-2.429,0-4.756,0.36-6.903,1.019"></path>
-            <path fill="#18193f" filter="url(#line-neon-glow)" d="M15.345,26.863h-3.879c-0.565,0-1.023-0.455-1.023-1.016v-7.694c0-0.56,0.459-1.015,1.023-1.015	c0.565,0,1.023,0.455,1.023,1.015v6.678h2.856c0.565,0,1.023,0.455,1.023,1.015C16.369,26.406,15.91,26.863,15.345,26.863z"></path>
-            <path fill="#18193f" filter="url(#line-neon-glow)" d="M19.357,25.846c0,0.56-0.459,1.016-1.023,1.016c-0.565,0-1.023-0.455-1.023-1.016v-7.694	c0-0.56,0.459-1.015,1.023-1.015c0.565,0,1.023,0.455,1.023,1.015V25.846z"></path>
-            <path fill="#18193f" filter="url(#line-neon-glow)" d="M28.697,25.846c0,0.439-0.28,0.826-0.7,0.963c-0.106,0.035-0.216,0.053-0.325,0.053	c-0.32,0-0.626-0.152-0.818-0.406l-3.976-5.369v4.759c0,0.56-0.459,1.016-1.025,1.016c-0.565,0-1.025-0.455-1.025-1.016v-7.694	c0-0.437,0.282-0.824,0.7-0.963c0.106-0.035,0.215-0.052,0.325-0.052c0.319,0,0.626,0.152,0.818,0.406l3.978,5.369v-4.761	c0-0.56,0.46-1.015,1.025-1.015s1.023,0.455,1.023,1.015L28.697,25.846z"></path>
-            <path fill="#18193f" filter="url(#line-neon-glow)" d="M34.975,20.983c0.565,0,1.025,0.455,1.025,1.016c0,0.56-0.459,1.015-1.025,1.015h-2.856v1.817h2.856	c0.565,0,1.025,0.455,1.025,1.015s-0.46,1.016-1.025,1.016h-3.879c-0.563,0-1.023-0.455-1.023-1.016v-3.845c0-0.001,0-0.001,0-0.001	v-0.001v-3.842c0-0.001,0-0.001,0-0.003c0-0.56,0.459-1.015,1.023-1.015h3.879c0.565,0,1.025,0.455,1.025,1.015	s-0.459,1.015-1.025,1.015h-2.856v1.817h2.856V20.983z"></path>
-          </svg>
-        </div>
-        <div>
-          <h2 id="line_txt">LINE</h2>
-        </div>
-      </div></a>
-      <!--▼facebook--> 
-      <a href="">
-      <div class="media_box">
-        <div class="icon_box">
-          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
-            <defs>
-              <filter id="fb-neon-glow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
-                <feMerge>
-                  <feMergeNode in="blur" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              <feColorMatrix type="matrix" values="0 0 0 0 0.2 0 0 0 0 0.3 0 0 0 0 0.5 0 0 0 3 0" result="glow" />
-                <feBlend in="SourceGraphic" in2="glow" mode="normal" />
-              </filter>
-            </defs>
-            <circle cx="28" cy="28" r="18.5" fill="#90caf9"></circle>
-            <path fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" filter="url(#fb-neon-glow)" d="M34.7,39.1c-3,2.1-6.7,3.4-10.7,3.4C13.8,42.5,5.5,34.2,5.5,24c0-3,0.7-5.8,2-8.4"></path>
-            <path fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" filter="url(#fb-neon-glow)" d="M13.9,8.5c2.9-1.9,6.3-3,10.1-3c10.2,0,18.5,8.3,18.5,18.5c0,3.4-0.9,6.6-2.5,9.3"></path>
-            <path fill="black" filter="url(#fb-neon-glow)" d="M17,29h4v13.2c1,0.2,2,0.3,3,0.3s2-0.1,3-0.3V29h3.6c0.5,0,0.9-0.4,1-0.9l0.4-3c0-0.3-0.1-0.6-0.2-0.8	C31.6,24.1,31.3,24,31,24h-4v-3.5c0-1.1,0.9-2,2-2h2c0.6,0,1-0.4,1-1v-3.4c0-0.5-0.4-1-0.9-1c-0.1,0-1.5-0.1-3.3-0.1	c-4.4,0-6.8,2.6-6.8,7.4V24h-4c-0.6,0-1,0.4-1,1v3C16,28.6,16.4,29,17,29z"></path>
-          </svg>
-        </div>
-        <div>
-          <h2 id="facebook_txt">FACEBOOK</h2>
-        </div>
-      </div></a>
-      <!--▼github-->
-      <a href="">
-      <div class="media_box">
-        <div class="icon_box">
-          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
-            <defs>
-              <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
-                <feMerge>
-                  <feMergeNode in="blur" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-                <feColorMatrix type="matrix" values="0 0 0 0 0.6 0 0 0 0 0.5 0 0 0 0 0.2 0 0 0 3 0" result="glow" />
-                <feBlend in="SourceGraphic" in2="glow" mode="normal" />
-              </filter>
-            </defs>
-            <path fill="#ffe082" d="M27.015,46.507L9.493,28.986c-0.544-0.544-0.544-1.426,0-1.969L27.015,9.494	c0.544-0.544,1.426-0.544,1.969,0l17.523,17.522c0.544,0.544,0.544,1.426,0,1.969L28.985,46.507	C28.441,47.05,27.559,47.05,27.015,46.507z"></path>
-            <path fill="none" filter="url(#neon-glow)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="M28.916,38.576l-3.931,3.932c-0.544,0.543-1.426,0.543-1.97,0L5.493,24.986c-0.544-0.544-0.544-1.426,0-1.969l9.017-9.018"></path>
-            <path fill="none" filter="url(#neon-glow)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="M18.619,9.89l4.396-4.396c0.544-0.544,1.426-0.544,1.969,0l17.523,17.522c0.544,0.544,0.544,1.426,0,1.969l-9.378,9.379"></path>
-            <circle filter="url(#neon-glow)" cx="24" cy="32.73" r="2.91" fill="black"></circle>
-            <circle filter="url(#neon-glow)" cx="32.73" cy="24.001" r="2.91" fill="black"></circle>
-            <circle filter="url(#neon-glow)" cx="24" cy="15.271" r="2.91" fill="black"></circle>
-            <line x1="24" x2="24" y1="32.73" y2="15.271" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"></line>
-            <line x1="32.73" x2="18.62" y1="24.001" y2="9.891" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"></line>
-          </svg>
-        </div>
-        <div>
-          <h2 id="github_txt">GITHUB</h2>
-        </div>
-      </div></a>
-      <!--▼youtube--> 
-      <a href="">
-      <div class="media_box">
-        <div class="icon_box">
-          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
-            <defs>
-              <filter id="yt-neon-glow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
-                <feMerge>
-                  <feMergeNode in="blur" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-                <feColorMatrix type="matrix" values="0 0 0 0 0.5 0 0 0 0 0.3 0 0 0 0 0.3 0 0 0 3 0" result="glow" />
-                <feBlend in="SourceGraphic" in2="glow" mode="normal" />
-              </filter>
-            </defs>
-            <!-- <path fill="#ffab91" d="M27.86,14c-6.144,0-11.916,0.469-14.989,1.125c-2.048,0.469-3.817,1.875-4.19,4.031	c-0.371,2.25-0.744,5.125-0.744,9.344s0.373,7,0.838,9.344c0.373,2.063,2.141,3.563,4.19,4.031C16.223,42.531,21.809,43,27.953,43	s11.73-0.469,14.989-1.125c2.048-0.469,3.817-1.875,4.19-4.031c0.373-2.344,0.838-5.219,0.931-9.438	c0-4.219-0.466-7.094-0.931-9.438c-0.373-2.063-2.141-3.563-4.19-4.031C39.684,14.469,34.005,14,27.86,14L27.86,14z"></path> -->
-            <!-- <path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M28.79,10.093	C27.206,10.034,25.549,10,23.857,10l0,0c-6.278,0-12.176,0.469-15.316,1.125C6.448,11.594,4.641,13,4.26,15.156	C3.881,17.406,3.5,20.281,3.5,24.5s0.381,7,0.856,9.344c0.381,2.063,2.188,3.563,4.281,4.031c1.085,0.214,2.423,0.408,3.951,0.572"></path> -->
-            <!-- <path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M18.5,38.881	C20.233,38.958,22.067,39,23.952,39c6.278,0,11.986-0.469,15.316-1.125c2.093-0.469,3.9-1.875,4.281-4.031	c0.381-2.344,0.856-5.219,0.951-9.438c0-4.219-0.476-7.094-0.951-9.438c-0.381-2.063-2.188-3.563-4.281-4.031	c-0.888-0.125-1.952-0.25-3.154-0.366"></path> -->
-
-            <circle cx="28" cy="28" r="18.5" fill="#ffab91"></circle>
-            <path fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" filter="url(#yt-neon-glow)" d="M34.7,39.1c-3,2.1-6.7,3.4-10.7,3.4C13.8,42.5,5.5,34.2,5.5,24c0-3,0.7-5.8,2-8.4"></path>
-            <path fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" filter="url(#yt-neon-glow)" d="M13.9,8.5c2.9-1.9,6.3-3,10.1-3c10.2,0,18.5,8.3,18.5,18.5c0,3.4-0.9,6.6-2.5,9.3"></path>
-
-            <path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M18.5,24v4.514	c0,1.522,1.663,2.476,3,1.721l7.99-4.514c1.347-0.761,1.347-2.682,0-3.443l-7.99-4.514c-1.337-0.755-3,0.199-3,1.721"></path>
-
-            <!-- <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48"><defs><filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" /><feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge><feColorMatrix type="matrix" values="0 0 0 0 0.286 0 0 0 0 0.349 0 0 0 0 0.623 0 0 0 1 0" result="glow" /><feBlend in="SourceGraphic" in2="glow" mode="normal" /></filter></defs><path fill="none" filter="url(#neon-glow)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M33.7,42.5h2.8c2.2,0,4-1.8,4-4v-12c0-2.2-1.8-4-4-4H19.4"></path><path fill="none" filter="url(#neon-glow)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13.6,22.5h-2.1c-2.2,0-4,1.8-4,4v12c0,2.2,1.8,4,4,4h15.9"></path><path fill="black" filter="url(#neon-glow)" d="M25.8,9.8c-0.2-0.7-0.6-1.2-1.1-1.5c-0.5-0.3-1.1-0.5-1.9-0.5c-0.8,0-1.5,0.2-2,0.5c-0.5,0.3-0.9,0.8-1.1,1.5	c-0.2,0.7-0.4,1.6-0.4,2.8v1.6c0,1.2,0.1,2.1,0.3,2.8c0.2,0.7,0.6,1.2,1,1.5c0.5,0.3,1.2,0.5,2,0.5c0.8,0,1.5-0.2,2-0.5	s0.8-0.8,1.1-1.5c0.2-0.7,0.3-1.6,0.3-2.8v-1.6C26.1,11.5,26,10.5,25.8,9.8z M23.7,15.1c0,0.8-0.1,1.4-0.2,1.7	c-0.1,0.4-0.4,0.5-0.7,0.5c-0.3,0-0.6-0.2-0.7-0.5c-0.1-0.4-0.2-0.9-0.2-1.7v-3.4c0-0.8,0.1-1.3,0.2-1.7c0.1-0.4,0.4-0.5,0.7-0.5	c0.3,0,0.6,0.2,0.7,0.5c0.1,0.4,0.2,0.9,0.2,1.7L23.7,15.1L23.7,15.1z"></path><path fill="black" filter="url(#neon-glow)" d="M14.7,14L12,4.4C12,4.2,12.1,4,12.3,4h1.6c0.2,0,0.4,0.2,0.5,0.4c0.3,1.4,1.3,6.3,1.4,7h0.1	c0.1-0.5,1.2-5.6,1.5-7c0-0.2,0.3-0.4,0.5-0.4h1.6c0.2,0,0.3,0.2,0.3,0.4L17.1,14v4.3c0,0.3-0.2,0.5-0.5,0.5h-1.4	c-0.3,0-0.5-0.2-0.5-0.5L14.7,14z"></path><path fill="black" filter="url(#neon-glow)" d="M34,8.5v9.8c0,0.3-0.2,0.5-0.5,0.5h-1c-0.2,0-0.5-0.2-0.5-0.4l-0.1-0.9h-0.1c-0.5,1-1.3,1.5-2.3,1.5	c-0.7,0-1.3-0.2-1.6-0.7c-0.3-0.5-0.5-1.2-0.5-2.2V8.5c0-0.3,0.2-0.5,0.5-0.5h1.4c0.3,0,0.5,0.2,0.5,0.5v7.4c0,0.5,0.1,0.8,0.2,1	s0.3,0.3,0.5,0.3c0.2,0,0.4-0.1,0.6-0.2c0.2-0.1,0.3-0.3,0.4-0.5V8.5c0-0.3,0.2-0.5,0.5-0.5h1.4C33.8,8,34,8.2,34,8.5z"></path><path fill="black" filter="url(#neon-glow)" d="M15.5,38.5h-1c-0.3,0-0.5-0.2-0.5-0.5V28h-1.5c-0.3,0-0.5-0.2-0.5-0.5v-1c0-0.3,0.2-0.5,0.5-0.5h5	c0.3,0,0.5,0.2,0.5,0.5v1c0,0.3-0.2,0.5-0.5,0.5H16v10C16,38.3,15.8,38.5,15.5,38.5z"></path><path fill="black" filter="url(#neon-glow)" d="M23,38c0,0.3-0.2,0.5-0.5,0.5h-0.6c-0.2,0-0.5-0.2-0.5-0.4l-0.1-0.7h0c-0.4,0.8-1.1,1.2-1.9,1.2	c-0.6,0-1-0.2-1.3-0.6c-0.3-0.4-0.4-1-0.4-1.8v-6.1c0-0.3,0.2-0.5,0.5-0.5h1c0.3,0,0.5,0.2,0.5,0.5v6c0,0.4,0,0.7,0.1,0.8	c0.1,0.2,0.2,0.3,0.4,0.3c0.2,0,0.3-0.1,0.5-0.2c0.2-0.1,0.3-0.2,0.4-0.4v-6.5c0-0.3,0.2-0.5,0.5-0.5h1c0.3,0,0.5,0.2,0.5,0.5V38z"></path><path fill="black" filter="url(#neon-glow)" d="M29.6,33.4c0-1-0.1-1.8-0.2-2.3c-0.1-0.6-0.3-1-0.6-1.2s-0.6-0.4-1.1-0.4c-0.4,0-0.7,0.1-1,0.3	c-0.3,0.2-0.6,0.5-0.7,0.8h0v-4.1c0-0.3-0.2-0.5-0.5-0.5h-1c-0.3,0-0.5,0.2-0.5,0.5V38c0,0.3,0.2,0.5,0.5,0.5h0.8	c0.2,0,0.4-0.2,0.5-0.4l0.1-0.5h0c0.2,0.3,0.4,0.5,0.7,0.7c0.3,0.2,0.6,0.3,1,0.3c0.7,0,1.2-0.3,1.5-0.9s0.5-1.6,0.5-2.9h0V33.4z M27.6,34.7c0,0.6,0,1.1-0.1,1.5c-0.1,0.4-0.1,0.6-0.3,0.8s-0.3,0.2-0.5,0.2c-0.2,0-0.3,0-0.5-0.1c-0.1-0.1-0.3-0.2-0.3-0.3v-5	c0.1-0.2,0.2-0.4,0.3-0.6c0.2-0.2,0.3-0.2,0.5-0.2c0.2,0,0.4,0.1,0.5,0.2c0.1,0.2,0.2,0.4,0.2,0.8c0,0.4,0.1,0.9,0.1,1.6L27.6,34.7	L27.6,34.7z"></path><path fill="black" filter="url(#neon-glow)" d="M35.3,34.7c0.3,0,0.5-0.2,0.5-0.5v-1c0-0.9-0.1-1.7-0.2-2.2c-0.1-0.5-0.4-0.9-0.8-1.2	c-0.4-0.2-0.9-0.4-1.6-0.4c-1,0-1.7,0.3-2.1,0.9s-0.6,1.6-0.6,2.9v1.5c0,1.3,0.2,2.2,0.6,2.8s1.1,0.9,2.1,0.9c0.8,0,1.4-0.2,1.9-0.6	c0.4-0.4,0.6-0.9,0.7-1.6c0-0.3-0.2-0.5-0.5-0.5c-0.2,0-0.6,0-0.8,0c-0.3,0-0.5,0.2-0.5,0.5c0,0.2,0,0.4-0.1,0.5	c-0.1,0.2-0.4,0.3-0.6,0.3c-0.2,0-0.4-0.1-0.5-0.2c-0.1-0.1-0.2-0.3-0.2-0.6s-0.1-0.7-0.1-1.3v-0.4L35.3,34.7L35.3,34.7z M32.5,33.6	v-0.6c0-0.6,0-1,0.1-1.3c0-0.3,0.1-0.5,0.2-0.6c0.1-0.1,0.3-0.2,0.5-0.2c0.2,0,0.4,0.1,0.5,0.2c0.1,0.1,0.2,0.3,0.2,0.6	c0,0.3,0.1,0.7,0.1,1.3v0.6L32.5,33.6L32.5,33.6z"></path></svg> -->
-          </svg>
-        </div>
-        <div>
-          <h2 id="youtube_txt">YOUTUBE</h2>
-        </div>
-      </div></a>
-    </div>
-
-  </dvi>
-
+<header>
+  <!-- header style -->
   <style>
-    #spacer {
-      height: 8px;
-      width: 80vw;
-
-      margin: 0;
-      padding: 0;
-
-      border-radius: 50px;
-      background-color: #ffffff;
-
-      transition: all 0.5s ease-in-out;
+    header {
+      position: sticky;
+      top: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      height: 52px;
+      width: 100vw;
+      background-color: var(--header-usingcolor-lightgrey);
     }
-    #spacer.fixed {
-      width: 20vw;
+    header h1.name {
+      font-size: 32px;
+      margin: 0 0 0 18px;
+    }
+    .iconBox {
+      display: flex;
+      flex-direction: row;
+      margin: 0 18px 0 0;
+    }
+    .icon {
+      width: 40px;
+      height: 40px;
+      margin: 0 0 0 10px;
+      background-size: cover;
+      background-position: center;
+    }
+    .icon:hover {
+      cursor: pointer;
+    }
+    .icon.home {
+      background-image: url(img/icon/home.png);
+    }
+    .icon.search {
+      background-image: url(img/icon/list.png);
+    }
+    @media screen and (max-width: 1000px) { /*1500*/
+      header {
+        height: 48px;
+      }
+      header h1.name {
+        font-size: 27px;
+        margin: 0 0 0 15px;
+      }
+      .iconBox {
+        margin: 0 15px 0 0;
+      }
+      .icon {
+        width: 36px;
+        height: 36px;
+        margin: 0 0 0 7px;
+      }
+    }
+    @media screen and (max-width: 600px) {
+      header {
+        height: 40px;
+      }
+      header h1.name {
+        font-size: 24px;
+        margin: 0 0 0 12px;
+      }
+      .iconBox {
+        margin: 0 12px 0 0;
+      }
+      .icon {
+        width: 30px;
+        height: 30px;
+        margin: 0 0 0 5px;
+      }
     }
   </style>
-  <div id="spacer">
-    <script>
-      window.addEventListener('scroll', function() {
-        var spacer = document.getElementById("spacer");
-        var scrollY = window.scrollY;
 
-        if (scrollY > 10) {
-          spacer.classList.add('fixed');
-          body.classList.add('fixed');
-        } else {
-          spacer.classList.remove('fixed');
-          body.classList.remove('fixed');
+  <!-- name -->
+  <div><h1 class="name">Markusion</h1></div>
+
+  <!-- 2icon -->
+  <div class="iconBox">
+    <div class="icon home"></div>
+    <div class="icon search"></div>
+  </div>
+</header>
+
+<body>
+  <!-- body style -->
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 200vh;
+    }
+  </style>
+  <!-- basic info -->
+  <div class="BASICINFO">
+    <style>
+      .BASICINFO {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .BASICINFO_txt {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .profile_img {
+        height: 500px;
+        width: 500px;
+        margin: 100px 0 0 0;
+        border: 4px solid rgb(94, 94, 94);
+        border-radius: 20%;
+        background: url(img/profile_pic.png) center / cover;
+      }
+      .profile_txt {
+        margin: 30px 0 0 0;
+        font-size: 85px;
+      }
+      .info_title {
+        background-color: var(--globe-usingcolor-lightgrey);
+        font-weight: 500;
+
+        margin: 148px 0 120px 0;
+        font-size: 119px;
+      }
+      .txtBox {
+        margin: 0 0 20px 0;
+      }
+      .txtBox ul {
+        display: flex;
+        flex-direction: column;
+      }
+      .txtBox li {
+        list-style-type: none;
+        font-size: 4.5vw;
+        font-weight: 500;
+        margin: 0 0 19px 0;
+      }
+      @media screen and (max-width: 1000px) { /*1500*/
+        .profile_img {
+          height: 400px;
+          width: 400px;
+          border: 3px solid rgb(94, 94, 94);
+          margin: 90px 0 0 0;
         }
-      });
-    </script>
+        .profile_txt {
+          margin: 20px 0 0 0;
+          font-size: 68px;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        .profile_img {
+          height: 52vw;
+          width: 52vw;
+          border: 2.5px solid rgb(94, 94, 94);
+          margin: 60px 0 0 0;
+        }
+        .profile_txt {
+          margin: 10px 0 0 0;
+          font-size: 9vw;
+        }
+        .info_title {
+          margin: 25px 0 28px 0;
+          padding: 10px 22.5vw;
+          font-size: 20px;
+        }
+      }
+    </style>
+    <!-- IMG + NAME -->
+    <div style="
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;">
+      <!-- IMG -->
+      <div class="profile_img"></div>
+      <!-- NAME -->
+      <div class="profile_txt">MARKUSION</div>
+    </div>
+
+    <!-- basicINFO txt -->
+    <div class="BASICINFO_txt">
+      <!-- txt spacerBox -->
+      <div class="info_title">
+        <p>基本資訊｜Basic info</p>
+      </div>
+
+      <!-- txt -->
+      <div class="txtBox" style="display: flex; flex-direction: row;">
+        <ul style="align-items: flex-end; margin: 0 24px 0 0;">
+          <li>Name</li>
+          <li>E-mail</li>
+          <li>Phone</li>
+          <li>Current</li>
+        </ul>
+        <ul style="align-items: flex-start;">
+          <li>洪上淯</li>
+          <li>Vinlex1939@gmail.com</li>
+          <li>(09)27-101-378</li>
+          <li>外商藥廠 Quality Officer</li>
+        </ul>
+      </div>
+      
+    </div>
+
   </div>
 
-  <!-- biography -->
-  <dvi id="bio" style=" 
-  display: flex;
-  flex-direction: column;
-  ">
-    <div>line__1</div>
-    <div>line__2</div>
-    <div>line__3</div>
-    <div>line__4</div>
-  </dvi>
-  <!-- footer -->
-  <dvi style=" 
-  display: flex;
-  flex-direction: column;
-  ">
-    <div style="display: flex;flex-direction: column;align-self: start;margin: 10px; width: 92vw;"><h4 style='margin: 0px; font-weight: 700;'>THE PENGUIN STUDIO</h4><div style='display:flex;align-items: center;'><h3 style='margin: 0 35px 0 0; font-weight: 900; font-size: 30px;'>Zequlard</h5><p style='margin: 0px;'>IT</p></div><h4 style='margin: 0px; font-weight: 700;'>TPS. CHIEF ENGINEER</h4></div>
-  </dvi>
+  <!-- more info boxes -->
+  <style>
+    .moreINFObox {
+      display: flex;
+      height: 60vw;
+      width: 90vw;
+      margin: 0 0 20px 0;
+      border-radius: 20px;
+      position: relative;
+      z-index: -1;
+      color: var(--globe-usingcolor-white);
+    }
+
+    .moreINFObox::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      border-radius: 20px;
+      z-index: -1;
+    }
+    .moreINFObox::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    /* child _1 */
+    .moreINFObox:nth-child(1) h1 {
+      font-size: 30.5vw;
+      font-weight: 900;
+      height: 60%;
+    }
+    .moreINFObox:nth-child(1) p {
+      font-size: 4vw;
+      font-weight: 300;
+      text-shadow: 0 0 1px var(--body-usingstyle-textshadow);
+      letter-spacing: 2vw;
+      height: 22%;
+    }
+    .moreINFObox:nth-child(1) {
+      background-color: var(--globe-usingcolor-lightgrey);
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .moreINFObox:nth-child(1)::before {
+      background: url(img/globe/edu.jpg) center / cover;
+    }
+    .moreINFObox:nth-child(1)::after {
+      background: var(--body-usingstyle-blur-white);
+    }
+
+    /* child _2 */
+    .moreINFObox:nth-child(2) button {
+      font-size: 4vw;
+      font-weight: 400;
+      letter-spacing: 3px;
+      color: var(--globe-usingcolor-white);
+      height: fit-content;
+      width: fit-content;
+      margin: 10px 0 0 0;
+      border: solid 1.5px rgb(255, 255, 255);
+      padding: 1.5px 8px;
+      border-radius: 8px;
+      position: relative;
+      top: 10px;
+      background-color: var(--globe-usingcolor-greypink);
+      cursor: pointer;
+    }
+    .moreINFObox:nth-child(2) p {
+      font-size: 7.5vw;
+      font-weight: 700;
+      letter-spacing: 1vw;
+      height: 44px;
+    }
+    .moreINFObox:nth-child(2) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--globe-usingcolor-greypink);
+    }
+    
+    /* child _3 */
+    .moreINFObox:nth-child(3) h1 {
+      font-size: 12vw;
+      font-weight: 800;
+      text-shadow: 0 0 1px var(--body-usingstyle-textshadow);
+      margin: 0 12px 0 0;
+    }
+    .moreINFObox:nth-child(3) p {
+      margin: 0 12px 10px 0;
+      font-size: 4.1vw;
+      font-weight: 400;
+      letter-spacing: 3.7px;
+    }
+    .moreINFObox:nth-child(3) {
+      background-color: var(--globe-usingcolor-lightgrey);
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+    .moreINFObox:nth-child(3)::before {
+      background: url(img/globe/discuss.jpg) center / cover;
+    }
+    .moreINFObox:nth-child(3)::after {
+      background: var(--body-usingstyle-blur-white);
+    }
+
+    /* child _4 */
+    .moreINFObox:nth-child(4) p {
+      position: relative;
+      top: 30px;
+      font-size: 4.5vw;
+      font-weight: 400;
+      letter-spacing: 5.5px;
+    }
+    .moreINFObox:nth-child(4) {
+      background-color: var(--globe-usingcolor-lightgrey);
+      justify-content: center;
+      align-items: center;
+    }
+    .moreINFObox:nth-child(4)::before {
+      background: url(img/globe/library.jpg) center / cover;
+    }
+    .moreINFObox:nth-child(4)::after {
+      background: var(--body-usingstyle-blur-white);
+    }
+
+  </style>
+  <div>
+    <!-- edu pic box -->
+    <div class="moreINFObox">
+      <h1>EDU</h1>
+      <p>檢視家教課程詳細資訊</p>
+    </div>
+
+    <!-- edu contact box -->
+    <div class="moreINFObox">
+      <p>讓我們協助您學習</p>
+      <p>點擊按鈕諮詢內容</p>
+      <button>Click me</button>
+    </div>
+
+    <!-- project pic box -->
+    <div class="moreINFObox">
+      <h1>Project</h1>
+      <p>生醫工程研究成果</p>
+    </div>
+
+    <!-- thesis pic box -->
+    <div class="moreINFObox">
+      <p>概覽洪上淯所撰寫的論文</p>
+    </div>
+
+  </div>
 </body>
+
+<footer>
+  <div></div>
+  <div></div>
+  <div></div>
+</footer>
+
 </html>
