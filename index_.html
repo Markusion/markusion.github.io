@@ -16,8 +16,12 @@
       padding: 0;
     }
     :root {
+      --globe-usingcolor-white: rgb(255, 255, 255);
       --globe-usingcolor-lightgrey: rgb(236, 235, 235);
+      --globe-usingcolor-greypink: #C9ACBC;
       --header-usingcolor-lightgrey: rgba(222, 222, 222, 0.98);
+      --body-usingstyle-blur-white: rgba(255, 255, 255, 0.3);
+      --body-usingstyle-textshadow: rgba(51, 51, 51, 0.252);
     }
     html {
       scroll-behavior: smooth;
@@ -238,33 +242,106 @@
   <!-- more info boxes -->
   <style>
     .moreINFObox {
+      display: flex;
       height: 60vw;
       width: 90vw;
       margin: 0 0 20px 0;
       border-radius: 20px;
+      position: relative;
+      z-index: -1;
+      color: var(--globe-usingcolor-white);
+    }
+
+    .moreINFObox::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      border-radius: 20px;
+      z-index: -1;
+    }
+    .moreINFObox::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    /* child _1 */
+    .moreINFObox:nth-child(1) h1 {
+      font-size: 30.5vw;
+      font-weight: 900;
+      height: 60%;
+    }
+    .moreINFObox:nth-child(1) p {
+      font-size: 4vw;
+      font-weight: 300;
+      text-shadow: 0 0 1px var(--body-usingstyle-textshadow);
+      letter-spacing: 2vw;
+      height: 22%;
     }
     .moreINFObox:nth-child(1) {
       background-color: var(--globe-usingcolor-lightgrey);
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
     }
+    .moreINFObox:nth-child(1)::before {
+      background: url(img/globe/edu.jpg) center / cover;
+    }
+    .moreINFObox:nth-child(1)::after {
+      background: var(--body-usingstyle-blur-white);
+    }
+
+    /* child _2 */
     .moreINFObox:nth-child(2) {
-      background-color: var(--globe-usingcolor-lightgrey);
+      background-color: var(--globe-usingcolor-greypink);
     }
+    
+    /* child _3 */
     .moreINFObox:nth-child(3) {
       background-color: var(--globe-usingcolor-lightgrey);
     }
+    .moreINFObox:nth-child(3)::before {
+      background: url(img/globe/discuss.jpg) center / cover;
+    }
+    .moreINFObox:nth-child(3)::after {
+      background: var(--body-usingstyle-blur-white);
+    }
+
+    /* child _4 */
     .moreINFObox:nth-child(4) {
       background-color: var(--globe-usingcolor-lightgrey);
     }
+    .moreINFObox:nth-child(4)::before {
+      background: url(img/globe/library.jpg) center / cover;
+    }
+    .moreINFObox:nth-child(4)::after {
+      background: var(--body-usingstyle-blur-white);
+    }
+
   </style>
   <div>
     <!-- edu pic box -->
-    <div class="moreINFObox"></div>
+    <div class="moreINFObox">
+      <h1>EDU</h1>
+      <p>檢視家教課程詳細資訊</p>
+    </div>
+
     <!-- edu contact box -->
     <div class="moreINFObox"></div>
+
     <!-- project pic box -->
     <div class="moreINFObox"></div>
+
     <!-- thesis pic box -->
     <div class="moreINFObox"></div>
+
   </div>
 </body>
 
