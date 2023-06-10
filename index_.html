@@ -329,8 +329,23 @@
     }
     
     /* child _3 */
+    .moreINFObox:nth-child(3) h1 {
+      font-size: 12vw;
+      font-weight: 800;
+      text-shadow: 0 0 1px var(--body-usingstyle-textshadow);
+      margin: 0 12px 0 0;
+    }
+    .moreINFObox:nth-child(3) p {
+      margin: 0 12px 10px 0;
+      font-size: 4.1vw;
+      font-weight: 400;
+      letter-spacing: 3.7px;
+    }
     .moreINFObox:nth-child(3) {
       background-color: var(--globe-usingcolor-lightgrey);
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
     }
     .moreINFObox:nth-child(3)::before {
       background: url(img/globe/discuss.jpg) center / cover;
@@ -340,8 +355,17 @@
     }
 
     /* child _4 */
+    .moreINFObox:nth-child(4) p {
+      position: relative;
+      top: 30px;
+      font-size: 4.5vw;
+      font-weight: 400;
+      letter-spacing: 5.5px;
+    }
     .moreINFObox:nth-child(4) {
       background-color: var(--globe-usingcolor-lightgrey);
+      justify-content: center;
+      align-items: center;
     }
     .moreINFObox:nth-child(4)::before {
       background: url(img/globe/library.jpg) center / cover;
@@ -372,7 +396,9 @@
     </div>
 
     <!-- thesis pic box -->
-    <div class="moreINFObox"></div>
+    <div class="moreINFObox">
+      <p>概覽洪上淯所撰寫的論文</p>
+    </div>
 
   </div>
 </body>
