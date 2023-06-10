@@ -409,6 +409,11 @@
 </body>
 
 <style>
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   .statementTXTbox {
     height: fit-content;
     width: 85vw;
@@ -422,17 +427,20 @@
     flex-direction: column;
   }
   .copyright p {
-    margin: 3px 0 0 0;
+    margin: 0 0 0 0;
     font-size: 3.5vw;
     font-weight: 400;
     color: var(--globe-txt-grey);
+  }
+  svg {
+    margin: 5.5px 0;
   }
 </style>
 <footer>
   <div class="statementTXTbox">
     <p>本網站的資訊僅供參考，不保證準確性或完整性。對於使用這些資訊所導致的结果，我們不承擔責任。若有實際需求或疑間，請直按聯聚我們。</p>
   </div>
-  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="2">
+  <svg xmlns="http://www.w3.org/2000/svg" width="85vw" height="2">
     <line x1="0" y1="1" x2="100%" y2="1" stroke="grey" stroke-width="2"/>
   </svg>
   <div></div>
