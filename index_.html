@@ -24,7 +24,7 @@
       --body-usingstyle-textshadow: rgba(51, 51, 51, 0.252);
     }
     html {
-      scroll-behavior: smooth;
+      /* scroll-behavior: smooth; */
       overflow-x: hidden;
     }
   </style>
@@ -306,11 +306,20 @@
       color: var(--globe-usingcolor-white);
       height: fit-content;
       width: fit-content;
+      margin: 10px 0 0 0;
       border: solid 1.5px rgb(255, 255, 255);
       padding: 1.5px 8px;
       border-radius: 8px;
+      position: relative;
+      top: 10px;
       background-color: var(--globe-usingcolor-greypink);
       cursor: pointer;
+    }
+    .moreINFObox:nth-child(2) p {
+      font-size: 7.5vw;
+      font-weight: 700;
+      letter-spacing: 1vw;
+      height: 44px;
     }
     .moreINFObox:nth-child(2) {
       flex-direction: column;
@@ -357,7 +366,10 @@
     </div>
 
     <!-- project pic box -->
-    <div class="moreINFObox"></div>
+    <div class="moreINFObox">
+      <h1>Project</h1>
+      <p>生醫工程研究成果</p>
+    </div>
 
     <!-- thesis pic box -->
     <div class="moreINFObox"></div>
