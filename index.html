@@ -19,6 +19,10 @@
     //     }, 3000);
     //   }, 1500);
     // });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   </script>
   <style>
     ::-webkit-scrollbar {
@@ -192,11 +196,10 @@
 
   <!-- name -->
   <div><h1 class="name">Markusion</h1></div>
-
   <!-- 2icon -->
   <div class="iconBox">
-    <div class="icon home"></div>
-    <div class="icon search"></div>
+    <a onclick="scrollToTop()" class="icon home"></a>
+    <a href="" class="icon search"></a>
   </div>
 </header>
 
