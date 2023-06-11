@@ -367,11 +367,15 @@
       margin: 0 0 20px 0;
       border-radius: 20px;
       position: relative;
+      top: 40px;
       z-index: -1;
+      opacity: .75;
       color: var(--globe-usingcolor-white);
+      transition: all 0.5s ease;
     }
-    .moreINFObox::before::after.fixed {
-      top: 30px;
+    .moreINFObox.show {
+      top: 0px;
+      opacity: 1;
     }
 
     .moreINFObox::before {
