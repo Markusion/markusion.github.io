@@ -7,14 +7,18 @@
   <meta name="twitter:description" content="點擊連結至我的個人名片">
   <title>MARKUSION | HOME</title>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var loadingOverlay = document.querySelector("loadingOverlay");
-    });
-    window.addEventListener("load", function() {
-      var loadingOverlay = document.querySelector("loadingOverlay");
-      // loadingOverlay.style.display = "none";
-      // loadingOverlay.parentNode.removeChild(loadingOverlay);
-    });
+    // document.addEventListener("DOMContentLoaded", function() {
+    //   var loadingOverlay = document.querySelector("loadingOverlay");
+    // });
+    // window.addEventListener("load", function() {
+    //   var loadingOverlay = document.querySelector("loadingOverlay");
+    //   setTimeout(function() {
+    //     loadingOverlay.classList.add('fixed');
+    //     setTimeout(function() {
+    //       loadingOverlay.parentNode.removeChild(loadingOverlay);
+    //     }, 3000);
+    //   }, 1500);
+    // });
   </script>
   <style>
     ::-webkit-scrollbar {
@@ -42,17 +46,74 @@
   </style>
 </head>
 
-<loadingOverlay style="
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgb(255, 255, 255);
-  display: flex;align-items: center;
-  justify-content: center;z-index: 100;
-  transition: all .7s ease-in-out;">
-</loadingOverlay>
+<style>
+  loadingOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;align-items: center;
+    justify-content: center;z-index: 100;
+    transition: all .7s ease-in-out;
+  }
+  loadingOverlay.fixed {
+    top: 3%;
+    left: 0;
+    scale: 2;
+    color: #6e6e73;
+    opacity: 0;
+  }
+  loadingOverlay p {
+    position: absolute;
+    font-size: 14vw;
+    font-weight: 600;
+    color: #000000;
+    margin: 0 0 0 0;
+    top: 40%;
+  }
+  loadingOverlay .bar {
+    position: absolute;
+    width: 52vw;
+  }
+  loadingOverlay .bar .fill {
+    background-color: #000000;
+    width: 0px;
+    height: 5px;
+    border-radius: 50px;
+    animation: progres 1.9s linear forwards;
+  }
+  @keyframes progres{
+    0%{
+      width: 0%;
+    }
+    25%{
+      width: 50%;
+    }
+    50%{
+      width: 75%;
+    }
+    75%{
+      width: 85%;
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100%{
+      width: 100%;
+      opacity: .5;
+    }
+  };
+</style>
+<!-- <loadingOverlay>
+  <p>Loading</p>
+  <div class="bar"><div class="fill"></div></div>
+</loadingOverlay> -->
 
 <header>
   <!-- header style -->
@@ -307,7 +368,7 @@
     }
     .moreINFObox:nth-child(1) p {
       font-size: 4vw;
-      font-weight: 300;
+      font-weight: 500;
       text-shadow: 0 0 1px var(--body-usingstyle-textshadow);
       letter-spacing: 2vw;
       height: 22%;
