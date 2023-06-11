@@ -7,10 +7,25 @@
   <meta name="twitter:description" content="點擊連結至我的個人名片">
   <title>MARKUSION | HOME</title>
   <script>
-    // document.addEventListener("DOMContentLoaded", function() {
-    //   var loadingOverlay = document.querySelector("loadingOverlay");
-    // });
-    // window.addEventListener("load", function() {
+    document.addEventListener("DOMContentLoaded", function() {
+      var boxes = document.querySelectorAll('.moreINFObox');
+      function handleScroll() {
+        for (var i = 0; i < boxes.length; i++) {
+          var box = boxes[i];
+          var boxRect = box.getBoundingClientRect();
+          var viewportHeight = window.innerHeight;
+          
+          if (boxRect.top < viewportHeight / 1.2 ) {
+            box.classList.add('show');
+          } else {
+            box.classList.remove('show');
+          }
+        }
+      }
+      window.addEventListener('scroll', handleScroll);
+      handleScroll();
+    });
+    window.addEventListener("load", function() {
     //   var loadingOverlay = document.querySelector("loadingOverlay");
     //   setTimeout(function() {
     //     loadingOverlay.classList.add('fixed');
@@ -18,11 +33,24 @@
     //       loadingOverlay.parentNode.removeChild(loadingOverlay);
     //     }, 3000);
     //   }, 1500);
-    // });
+    });
 
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    window.addEventListener('scroll', function() {
+      var exBOX = document.querySelector("moreINFObox");
+      var windowHeight = window.innerHeight;
+      var boxOffsetTop = exBOX.offsetTop;
+      var boxHeight = exBOX.offsetHeight;
+      var scrollY = window.scrollY;
+      if (scrollY > boxOffsetTop - windowHeight / 1.2 || scrollY > boxOffsetTop + boxHeight - windowHeight) {
+        exBOX.classList.add('fixed');
+      } else {
+        exBOX.classList.remove('fixed');
+      }
+    });
   </script>
   <style>
     ::-webkit-scrollbar {
@@ -342,6 +370,9 @@
       z-index: -1;
       color: var(--globe-usingcolor-white);
     }
+    .moreINFObox::before::after.fixed {
+      top: 30px;
+    }
 
     .moreINFObox::before {
       content: "";
@@ -508,7 +539,7 @@
     color: var(--globe-txt-grey);
   }
   .copyright {
-    height: 40px;
+    height: 30px;
     display: flex;
     flex-direction: column;
   }
