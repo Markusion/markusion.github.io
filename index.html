@@ -6,6 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="twitter:description" content="點擊連結至我的個人名片">
   <title>MARKUSION | HOME</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var loadingOverlay = document.querySelector("loadingOverlay");
+    });
+    window.addEventListener("load", function() {
+      var loadingOverlay = document.querySelector("loadingOverlay");
+      // loadingOverlay.style.display = "none";
+      // loadingOverlay.parentNode.removeChild(loadingOverlay);
+    });
+  </script>
   <style>
     ::-webkit-scrollbar {
       display: none;
@@ -31,6 +41,18 @@
     }
   </style>
 </head>
+
+<loadingOverlay style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  display: flex;align-items: center;
+  justify-content: center;z-index: 100;
+  transition: all .7s ease-in-out;">
+</loadingOverlay>
 
 <header>
   <!-- header style -->
