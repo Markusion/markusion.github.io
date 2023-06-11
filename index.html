@@ -26,13 +26,13 @@
       handleScroll();
     });
     window.addEventListener("load", function() {
-    //   var loadingOverlay = document.querySelector("loadingOverlay");
-    //   setTimeout(function() {
-    //     loadingOverlay.classList.add('fixed');
-    //     setTimeout(function() {
-    //       loadingOverlay.parentNode.removeChild(loadingOverlay);
-    //     }, 3000);
-    //   }, 1500);
+      var loadingOverlay = document.querySelector("loadingOverlay");
+      setTimeout(function() {
+        loadingOverlay.classList.add('fixed');
+        setTimeout(function() {
+          loadingOverlay.parentNode.removeChild(loadingOverlay);
+        }, 3000);
+      }, 1500);
     });
 
     function scrollToTop() {
