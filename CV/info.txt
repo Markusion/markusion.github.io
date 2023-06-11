@@ -1,7 +1,7 @@
 name    洪上淯
 E-mail  Vinlex1939@gmail.com
 phone   (09)27-101-378
-現職     知名外商藥廠｜品質部門｜成本控制中心｜Quality Officer
+現職     葛蘭素史克｜品質部門｜成本控制中心｜Quality Officer
 
 經歷:
 2019    ~ 2022      年年會考成績優異，年年家教學生考上當地前三志願 
@@ -20,10 +20,11 @@ before    2016    : 全職補習班解題老師
   並與丹麥理工學院(Technical University of Denmark)的奈米磁性粒子研發團隊技術合作，
   可成功進行精準生化診斷，
   並獲美國國際開發署(USAID)對抗茲卡病毒(ZIKA)獎。
-  2016 Chun-Liang Lo, Meng-Han Chou, Pei-Lin Lu, I-Wen Lo, Yi-Ting Chiang, Shang-Yu Hung, Chieh- Yu Yang, Shuian-Yin Lin, Shiaw-Pyng Wey, Jem-Mau Lo, Ging-Ho Hsiue, 
+  2016 
+2.Chun-Liang Lo, Meng-Han Chou, Pei-Lin Lu, I-Wen Lo, Yi-Ting Chiang, Shang-Yu Hung, Chieh- Yu Yang, Shuian-Yin Lin, Shiaw-Pyng Wey, Jem-Mau Lo, Ging-Ho Hsiue, 
   The effect of PEG-5K grafting level and particle size on tumor accumulation and cellular uptake, 
   International journal of pharmaceutics, 2013 Nov 18;456 (2), 424-431
-2.洪上淯、羅尹彣、駱俊良, 
+3.洪上淯、羅尹彣、駱俊良, 
   “製備榖胱甘肽應答之奈米金粒子藥物載體”,
   第五屆世界華人 生物醫學工程會議(WACBE 2011) & 2011 生物醫學工程科技研討會, 
   2011.08.19 ~ 2011.08.20
@@ -32,6 +33,13 @@ before    2016    : 全職補習班解題老師
 1.指導教授:駱俊良 博士, 
   “神經醯胺-輔酶R之製備及其在癌症治療之應用”, 
   國立陽明大學生物醫 學工程研究所, 2010.09 ~ 2012.06
+學士論文:
+1.指導教授:李展平 博士, 
+  “M13、Qß病毒在大腸桿菌中的轉譯作用和基因表現”, 
+  慈濟大學 醫學研究所 生化學科, 2008.09 ~ 2010.06
+2.指導教授:李展平 博士, 
+  “大腸桿菌與質體轉型作用的研究”, 
+  慈濟大學 醫學研究所 生化學科, 2006.09 ~ 2010.06
 
 畢業於:
 2010 ~ 2012 : 國立陽明大學 生物醫學工程研究所生醫材料組 碩士
