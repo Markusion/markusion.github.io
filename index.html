@@ -25,6 +25,7 @@
       window.addEventListener('scroll', handleScroll);
       handleScroll();
     });
+    
     window.addEventListener("load", function() {
       var loadingOverlay = document.querySelector("loadingOverlay");
       setTimeout(function() {
@@ -94,7 +95,7 @@
     transition: all .7s ease-in-out;
   }
   loadingOverlay.fixed {
-    top: 3%;
+    top: 6%;
     left: 0;
     scale: 2;
     color: #6e6e73;
@@ -106,11 +107,12 @@
     font-weight: 600;
     color: #000000;
     margin: 0 0 0 0;
-    top: 40%;
+    top: 35%;
   }
   loadingOverlay .bar {
     position: absolute;
     width: 52vw;
+    top: 46%;
   }
   loadingOverlay .bar .fill {
     background-color: #000000;
@@ -142,10 +144,10 @@
     }
   };
 </style>
-<!-- <loadingOverlay>
+<loadingOverlay>
   <p>Loading</p>
   <div class="bar"><div class="fill"></div></div>
-</loadingOverlay> -->
+</loadingOverlay>
 
 <header>
   <!-- header style -->
