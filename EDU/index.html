@@ -35,6 +35,9 @@
 </style>
 <body>
   <style>
+    .headerBlocker {
+      height: 90vw;
+    }
     header {
       display: flex;
       position: relative;
@@ -69,22 +72,34 @@
       background: url("img/edu.jpg") center/cover;
       background-position: center;
     }
+    @media screen and (min-width: 800px) {
+      .titleTXT {
+        width: 30vw;
+      }
+      .titleTXT p {
+        font-size: 40px;
+        display: inline;
+      }
+    }
   </style>
   <header>
+    <div class="headerBlocker"></div>
+    <!-- left txt -->
     <div class="titleTXT">
       <h1>Education</h1>
-      <p>
-        我們立至於<br>
-        提供高品質的<br>
-        教育服務<br>
-        多項的科目<br>
-        供您選擇<br>
-      </p>
+      <p>我們立至於</p>
+      <p>提供高品質的</p>
+      <p>教育服務</p>
+      <p>多項的科目</p>
+      <p>供您選擇</p>
     </div>
+    <!-- right img -->
     <div class="titleIMG"></div>
   </header>
 
   <main>
+    <h1>Markusion EDU</h1>
+    <p>歡迎來到Markusion EDU，您領略優質學習體驗的門戶。我們在這裡提供專業獨特的家教服務資訊，為您展現一種與眾不同的學習風貌。</p>
   </main>
 
   <footer>
