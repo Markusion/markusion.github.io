@@ -17,18 +17,78 @@
   <link rel="icon" href="img/icon.png">
   <title>MARKUSION | EDU</title>
 </head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  :root {
+    --color-black: #000000;
+    --color-title-red: #FF2300;
+  }
+</style>
 <body>
   <style>
-    body {
-      background: linear-gradient(to bottom, rgb(55, 55, 55), rgb(0, 0, 0));
+    header {
       display: flex;
-      flex-direction: column;
+      position: relative;
+      top: 0;
+      flex-direction: row;
       align-items: center;
-      margin: 0;
-      height: 100vh;
+      width: 100vw;
+      height: fit-content;
+    }
+    .titleTXT {
+      position: absolute;
+      left: 10px;
+      top: 30vw;
+      font-size: 5.4vw;
+      z-index: 5;
+    }
+    .titleTXT h1 {
+      color: var(--color-title-red);
+      font-weight: 900;
+    }
+    .titleTXT p {
+      color: var(--color-black);
+      font-weight: 500;
+      font-size: 5.3vw;
+    }
+    .titleIMG {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 65vw;
+      height: 90vw;
+      background: url("img/edu.jpg") center/cover;
+      background-position: center;
     }
   </style>
+  <header>
+    <div class="titleTXT">
+      <h1>Education</h1>
+      <p>
+        我們立至於<br>
+        提供高品質的<br>
+        教育服務<br>
+        多項的科目<br>
+        供您選擇<br>
+      </p>
+    </div>
+    <div class="titleIMG"></div>
+  </header>
 
-  
+  <main>
+  </main>
+
+  <footer>
+  </footer>
+
 </body>
 </html>
