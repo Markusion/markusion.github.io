@@ -17,7 +17,7 @@
           var boxRect = box.getBoundingClientRect();
           var viewportHeight = window.innerHeight;
           
-          if (boxRect.top < viewportHeight / 1.2 ) {
+          if (boxRect.top < viewportHeight / 1.06 ) {
             box.classList.add('show');
           } else {
             box.classList.remove('show');
@@ -73,7 +73,7 @@
       --header-usingcolor-lightgrey: rgba(222, 222, 222, 0.98);
       --body-usingstyle-blur-white: rgba(255, 255, 255, 0.3);
       --body-usingstyle-textshadow: rgba(51, 51, 51, 0.252);
-      --transitiom-FtoS: all 0.5s cubic-bezier(0.36, 1, 0.77, 1);
+      --transitiom-FtoS: all 0.5s cubic-bezier(0.4, 1, 0.7, 1);
     }
     html {
       /* scroll-behavior: smooth; */
@@ -386,12 +386,14 @@
       color: var(--globe-usingcolor-white);
       transition: var(--transitiom-FtoS);
       z-index: 1;
-      box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.4);
       overflow: hidden;
+      scale: 1.02;
     }
     .moreINFObox.show {
       top: 0px;
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0);
+      scale: 1;
     }
 
     .moreINFObox::before {
