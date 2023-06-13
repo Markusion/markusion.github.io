@@ -12,6 +12,11 @@
     document.addEventListener("DOMContentLoaded", function() {
       var boxes = document.querySelectorAll('.moreINFObox');
       function handleScroll() {
+
+        // 借放一下
+        var BOX = document.querySelector(".moreINFObox:nth-child(2)");
+        BOX.classList.remove('linkEDU');
+
         for (var i = 0; i < boxes.length; i++) {
           var box = boxes[i];
           var boxRect = box.getBoundingClientRect();
@@ -28,19 +33,6 @@
       handleScroll();
     });
 
-    window.addEventListener("load", function() {
-      var loadingOverlay = document.querySelector("loadingOverlay");
-      setTimeout(function() {
-        loadingOverlay.classList.add('fixed');
-        setTimeout(function() {
-          loadingOverlay.parentNode.removeChild(loadingOverlay);
-        }, 3000);
-      }, 1500);
-    });
-
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
 
     window.addEventListener('scroll', function() {
       var exBOX = document.querySelector("moreINFObox");
@@ -54,6 +46,54 @@
         exBOX.classList.remove('fixed');
       }
     });
+
+
+    window.addEventListener("load", function() {
+      var loadingOverlay = document.querySelector("loadingOverlay");
+      setTimeout(function() {
+        loadingOverlay.classList.add('fixed');
+        setTimeout(function() {
+          loadingOverlay.parentNode.removeChild(loadingOverlay);
+        }, 3000);
+      }, 1500);
+    });
+
+    function scrollToTop() {
+      var BOX = document.querySelector(".moreINFObox:nth-child(2)");
+      BOX.classList.remove('linkEDU');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      body.style.overflowY = "auto";
+    }
+
+    function showEDU() {
+
+      var BOX = document.querySelector(".moreINFObox:nth-child(2)");
+      var BOX2 = document.querySelector(".moreINFObox.linkEDU:nth-child(2)");
+      var HEADER = document.querySelector("header");
+      var windowHeight = window.innerHeight + HEADER.offsetHeight;
+      var scrollY = window.scrollY;
+
+      // setTimeout(function() {
+      //   var boxOffsetTop = BOX.offsetTop;
+      //   var boxHeight = BOX.offsetHeight;
+      //   window.scrollTo({ top: windowHeight + boxHeight/2 - HEADER.offsetHeight/2, behavior: 'smooth' });
+      // }, 00);
+
+      BOX.classList.add('linkEDU');
+
+      // var boxOffsetTop = BOX.offsetTop;
+      // var boxHeight = BOX.offsetHeight;
+      // window.scrollTo({ top: boxOffsetTop + boxHeight/2 - windowHeight/2, behavior: 'smooth' });
+      
+      setTimeout(function() {
+        var boxOffsetTop = BOX.offsetTop;
+        var boxHeight = BOX.offsetHeight;
+        window.scrollTo({ top: boxOffsetTop + boxHeight/2 - windowHeight/2, behavior: 'smooth' });
+      }, 500);
+
+    }
+
+    
   </script>
   <style>
     ::-webkit-scrollbar {
@@ -377,6 +417,13 @@
 
   <!-- more info boxes -->
   <style>
+    .infoBoxesBox {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 0 0 0;
+    }
     .moreINFObox {
       display: flex;
       height: 60vw;
@@ -482,6 +529,11 @@
       align-items: center;
       background-color: var(--globe-usingcolor-greypink);
     }
+    .moreINFObox.linkEDU:nth-child(2) {
+      height: calc(100vh - 40px);
+      width: 100vw;
+      border-radius: 0;
+    }
     
     /* child _3 */
     .moreINFObox:nth-child(3) h1 {
@@ -530,7 +582,7 @@
     }
 
   </style>
-  <div>
+  <div class="infoBoxesBox">
     <!-- edu pic box -->
     <div class="moreINFObox">
       <h1>EDU</h1>
@@ -541,8 +593,8 @@
     <div class="moreINFObox">
       <p>讓我們協助您學習</p>
       <p>點擊按鈕諮詢內容</p>
-      <button>Click me</button>
-      <iframe src="/EDU/index.html" frameborder="0"></iframe>
+      <button onclick="showEDU()">Click me</button>
+      <!-- <iframe src="/EDU/index.html" frameborder="0"></iframe> -->
     </div>
 
     <!-- project pic box -->
