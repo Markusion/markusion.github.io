@@ -14,8 +14,20 @@
       function handleScroll() {
 
         // 借放一下
-        var BOX = document.querySelector(".moreINFObox:nth-child(2)");
-        BOX.classList.remove('linkEDU');
+        // removeEventListener('scroll');
+        setTimeout(function() {
+          window.addEventListener('scroll', function() {
+            // addEventListener('scroll');
+            // addEventListener('scroll');
+            removeEventListener('scroll');
+            setTimeout(function() {
+              var BOX = document.querySelector(".moreINFObox:nth-child(2)");
+              BOX.classList.remove('linkEDU');
+            }, 1000);
+            
+          }, 1000)
+        });
+        
 
         for (var i = 0; i < boxes.length; i++) {
           var box = boxes[i];
@@ -84,11 +96,11 @@
       // var boxHeight = BOX.offsetHeight;
       // window.scrollTo({ top: boxOffsetTop + boxHeight/2 - windowHeight/2, behavior: 'smooth' });
       
-      setTimeout(function() {
-        var boxOffsetTop = BOX.offsetTop;
-        var boxHeight = BOX.offsetHeight;
-        window.scrollTo({ top: boxOffsetTop + boxHeight/2 - windowHeight/2, behavior: 'smooth' });
-      }, 500);
+      // setTimeout(function() {
+      //   var boxOffsetTop = BOX.offsetTop;
+      //   var boxHeight = BOX.offsetHeight;
+      //   window.scrollTo({ top: boxOffsetTop + boxHeight/2 - windowHeight/2, behavior: 'smooth' });
+      // }, 500);
 
     }
 
@@ -511,7 +523,7 @@
       border: solid 1.5px rgb(255, 255, 255);
       border-radius: 8px;
       color: var(--globe-usingcolor-white);
-      background-color: var(--globe-usingcolor-greypink);
+      background-color: transparent;
       cursor: pointer;
     }
     .moreINFObox:nth-child(2) p {
@@ -521,17 +533,23 @@
       height: 44px;
     }
     .moreINFObox:nth-child(2) {
+      position: relative;
       display: flex;
       overflow-y: scroll;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       background-color: var(--globe-usingcolor-greypink);
+      transition: all 2s ease;
     }
     .moreINFObox.linkEDU:nth-child(2) {
+      position: fixed;
       height: calc(100vh - 40px);
       width: 100vw;
+      top: 40px;
+      left: center;
       border-radius: 0;
+      z-index: 10;
     }
     
     /* child _3 */
