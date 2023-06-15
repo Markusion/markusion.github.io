@@ -11,56 +11,41 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       var boxes = document.querySelectorAll('.moreINFObox');
+  
       function handleScroll() {
-
-        // 借放一下
-        // removeEventListener('scroll');
-        setTimeout(function() {
-          window.addEventListener('scroll', function() {
-            // addEventListener('scroll');
-            // addEventListener('scroll');
-            removeEventListener('scroll');
-            setTimeout(function() {
-              var BOX = document.querySelector(".moreINFObox:nth-child(2)");
-              BOX.classList.remove('linkEDU');
-            }, 1000);
-            
-          }, 1000)
-        });
-        
-
         for (var i = 0; i < boxes.length; i++) {
           var box = boxes[i];
           var boxRect = box.getBoundingClientRect();
           var viewportHeight = window.innerHeight;
-          
-          if (boxRect.top < viewportHeight / 1.06 ) {
+  
+          if (boxRect.top < viewportHeight / 1.06) {
             box.classList.add('show');
           } else {
             box.classList.remove('show');
           }
         }
       }
+  
       window.addEventListener('scroll', handleScroll);
       handleScroll();
     });
-
-
+  
     window.addEventListener('scroll', function() {
-      var exBOX = document.querySelector("moreINFObox");
+      var exBOX = document.querySelector(".moreINFObox");
       var windowHeight = window.innerHeight;
       var boxOffsetTop = exBOX.offsetTop;
       var boxHeight = exBOX.offsetHeight;
       var scrollY = window.scrollY;
+  
       if (scrollY > boxOffsetTop - windowHeight / 1.2 || scrollY > boxOffsetTop + boxHeight - windowHeight) {
         exBOX.classList.add('fixed');
       } else {
         exBOX.classList.remove('fixed');
       }
     });
-
+  
     window.addEventListener("load", function() {
-      var loadingOverlay = document.querySelector("loadingOverlay");
+      var loadingOverlay = document.querySelector(".loadingOverlay");
       setTimeout(function() {
         loadingOverlay.classList.add('fixed');
         setTimeout(function() {
@@ -68,32 +53,28 @@
         }, 3000);
       }, 1500);
     });
-
+  
     function scrollToTop() {
       var BOX = document.querySelector(".moreINFObox:nth-child(2)");
       BOX.classList.remove('linkEDU');
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      body.style.overflowY = "auto";
+      document.documentElement.style.overflowY = "auto";
     }
-
+  
     function showEDU() {
-
       var BOX = document.querySelector(".moreINFObox:nth-child(2)");
       var HEADER = document.querySelector("header");
       var windowHeight = window.innerHeight + HEADER.offsetHeight;
-
-      setTimeout(function() {
-        var boxOffsetTop = BOX.offsetTop;
-        var boxHeight = BOX.offsetHeight;
-        window.scrollTo({ top: windowHeight + boxHeight/2 - HEADER.offsetHeight/2 - 40, behavior: 'smooth' });
-      }, 0);
+      var boxOffsetTop = BOX.offsetTop;
+      var boxHeight = BOX.offsetHeight;
+  
+      window.scrollTo({ top: windowHeight + boxHeight/2 - HEADER.offsetHeight/2 - 40, behavior: 'smooth' });
 
       BOX.classList.add('linkEDU');
-      document.html.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
     }
-
-    
   </script>
+  
   <style>
     ::-webkit-scrollbar {
       display: none;
@@ -542,7 +523,10 @@
       border-radius: 0;
       z-index: 10;
       margin: 0 0 70px 0;
-      overflow-y: auto;
+      overflow-y: scroll;
+    }
+    .moreINFObox.linkEDU:nth-child(2) h1, .moreINFObox.linkEDU:nth-child(2) p, .moreINFObox.linkEDU:nth-child(2) button {
+      display: none;
     }
     
     /* child _3 */
@@ -591,6 +575,17 @@
       background: var(--body-usingstyle-blur-white);
     }
 
+    .moreINFObox:nth-child(2) iframe {
+      position: relative;
+      width: 0%;
+      height: 100%;
+      display: none;
+    }
+    .moreINFObox.linkEDU:nth-child(2) iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
   </style>
   <div class="infoBoxesBox">
     <!-- edu pic box -->
@@ -604,7 +599,7 @@
       <p>讓我們協助您學習</p>
       <p>點擊按鈕諮詢內容</p>
       <button onclick="showEDU()">Click me</button>
-      <!-- <iframe src="/EDU/index.html" frameborder="0"></iframe> -->
+      <iframe src="/EDU/index.html" frameborder="0"></iframe>
     </div>
 
     <!-- project pic box -->
