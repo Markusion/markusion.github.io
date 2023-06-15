@@ -79,18 +79,18 @@
     function showEDU() {
 
       var BOX = document.querySelector(".moreINFObox:nth-child(2)");
-      var BOX2 = document.querySelector(".moreINFObox.linkEDU:nth-child(2)");
       var HEADER = document.querySelector("header");
       var windowHeight = window.innerHeight + HEADER.offsetHeight;
-      var scrollY = window.scrollY;
 
-      // setTimeout(function() {
-      //   var boxOffsetTop = BOX.offsetTop;
-      //   var boxHeight = BOX.offsetHeight;
-      //   window.scrollTo({ top: windowHeight + boxHeight/2 - HEADER.offsetHeight/2, behavior: 'smooth' });
-      // }, 00);
+      setTimeout(function() {
+        var boxOffsetTop = BOX.offsetTop;
+        var boxHeight = BOX.offsetHeight;
+        window.scrollTo({ top: windowHeight + boxHeight/2 - HEADER.offsetHeight/2 - 40, behavior: 'smooth' });
+      }, 0);
 
       BOX.classList.add('linkEDU');
+      document.html.style.overflow = "hidden";
+      // window.scrollTo(0, 0);
 
       // var boxOffsetTop = BOX.offsetTop;
       // var boxHeight = BOX.offsetHeight;
@@ -526,6 +526,11 @@
       background-color: transparent;
       cursor: pointer;
     }
+    .moreINFObox:nth-child(2) button:active {
+      --scale-factor: 0.95;
+      scale: var(--scale-factor);
+      
+    }
     .moreINFObox:nth-child(2) p {
       font-size: 7.5vw;
       font-weight: 700;
@@ -540,16 +545,16 @@
       justify-content: center;
       align-items: center;
       background-color: var(--globe-usingcolor-greypink);
-      transition: all 2s ease;
     }
     .moreINFObox.linkEDU:nth-child(2) {
-      position: fixed;
-      height: calc(100vh - 40px);
+      position: relative;
+      height: calc(100vh - 35px);
       width: 100vw;
-      top: 40px;
-      left: center;
+      top: 35px;
       border-radius: 0;
       z-index: 10;
+      margin: 0 0 70px 0;
+      overflow-y: auto;
     }
     
     /* child _3 */
